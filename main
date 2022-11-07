@@ -36,12 +36,26 @@ print(result2)
 
 //ex4
 func checkingYear(year: Int) -> Bool {
-    if year % 4 == 0 {
-        return true
+    if (year % 4 != 0) {
+        return true // обычный
     }
     else
     {
-        return false
+        if (year % 100 == 0 && year % 400 != 0)
+        {
+            return true // обычный
+        }
+        else
+        {
+            return false //високосный
+        }
     }
 }
-print(checkingYear(year: 1972))
+let year1 = 1972
+let year2 = 200
+let year3 = 400
+let year4 = 1998
+print("\(year1) is \(checkingYear(year: year1))")
+print("\(year2) is \(checkingYear(year: year2))")
+print("\(year3) is \(checkingYear(year: year3))")
+print("\(year4) is \(checkingYear(year: year4))")
